@@ -1,0 +1,9 @@
+.DS_Store
+.ruff_cache
+
+example.txt
+example1.txt
+example2.txt
+input.txt
+input1.txt
+input2.txt

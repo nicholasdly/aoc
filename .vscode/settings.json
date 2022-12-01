@@ -1,0 +1,10 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+    },
+    "supermaven.enable": {
+        "markdown": false,
+        "python": false,
+    },
+}
