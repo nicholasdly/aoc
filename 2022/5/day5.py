@@ -46,6 +46,10 @@ class SupplyStacks:
         self.stacks[destination - 1].extend(holder[::-1])
 
 def partOne(lines: list, stacks: SupplyStacks) -> str:
+    """
+    Given a list of move instructions, execute each
+    instruction moving one crate at a time.
+    """
     for line in lines:
         count = int(line.split()[1])
         start = int(line.split()[3])
@@ -54,6 +58,10 @@ def partOne(lines: list, stacks: SupplyStacks) -> str:
     return stacks.tops()
 
 def partTwo(lines: list, stacks: list[list]) -> str:
+    """
+    Given a list of move instructions, execute each instruction
+    moving an indefinite number of crates at a time.
+    """
     for line in lines:
         count = int(line.split()[1])    
         start = int(line.split()[3])
