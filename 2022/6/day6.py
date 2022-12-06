@@ -5,7 +5,7 @@ def partOne(line: str) -> str:
     """
     marker = list(line[:4])
     for pos, char in enumerate(line[4:], 4):
-        if len(set(marker)) < 4:
+        if len(marker) < 4:
             marker.pop(0)
             marker.append(char)
         else:
@@ -17,7 +17,7 @@ def partTwo(line: str) -> str:
     """
     marker = list(line[:14])
     for pos, char in enumerate(line[14:], 14):
-        if len(set(marker)) < 14:
+        if len(marker) < 14:
             marker.pop(0)
             marker.append(char)
         else:
