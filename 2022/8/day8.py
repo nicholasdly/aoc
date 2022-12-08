@@ -20,7 +20,7 @@ def computeScenicScore(forest: list[list[Tree]], row: int, col: int) -> int:
         'up' : 0
     }
 
-    # Mark all trees visible by looking right
+    # Counts all trees visible by looking right
     vision = col + 1
     while vision < length:
         distances['right'] += 1
@@ -28,7 +28,7 @@ def computeScenicScore(forest: list[list[Tree]], row: int, col: int) -> int:
             break
         vision += 1
 
-    # Mark all trees visible by looking down
+    # Counts all trees visible by looking down
     vision = row + 1
     while vision < length:
         distances['down'] += 1
@@ -36,7 +36,7 @@ def computeScenicScore(forest: list[list[Tree]], row: int, col: int) -> int:
             break
         vision += 1
 
-    # Mark all trees visible by looking left
+    # Counts all trees visible by looking left
     vision = col - 1
     while vision >= 0:
         distances['left'] += 1
@@ -44,7 +44,7 @@ def computeScenicScore(forest: list[list[Tree]], row: int, col: int) -> int:
             break
         vision -= 1
 
-    # Mark all trees visible by looking up
+    # Counts all trees visible by looking up
     vision = row - 1
     while vision >= 0:
         distances['up'] += 1
