@@ -18,6 +18,10 @@ To run a specific solution, run the associated script:
 uv run ./[YEAR]/[DAY]/solution.py
 ```
 
+> [!note]
+> The puzzle text and input files are not included, and are actually added to the `.gitignore`, by request of Eric Wastl, the creator of Advent of Code. You can easily retrieve them for yourself from the Advent of Code website.
+> > "If you're posting a code repository somewhere, please don't include parts of Advent of Code like the puzzle text or your inputs."
+
 To run ruff, the linter and formatter, use the following command:
 
 ```bash
