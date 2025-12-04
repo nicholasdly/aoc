@@ -19,32 +19,34 @@ uv run ./[YEAR]/[DAY]/solution.py
 ## Template
 
 ```python
-import os
+from pathlib import Path
+from sys import path
 
-BASE_DIRECTORY = os.path.abspath(os.path.dirname(__file__))
+path.insert(0, str(Path(__file__).parent.parent.parent))
+
+from helpers import log, read_input
 
 
+@log
 def part_one() -> int:
-    file = open(os.path.join(BASE_DIRECTORY, "input.txt"))
-
-    # ...
-
-    file.close()
+    data = read_input(__file__)  # Reads `input.txt` file
     return 0
 
 
+@log
 def part_two() -> int:
-    file = open(os.path.join(BASE_DIRECTORY, "input.txt"))
-
-    # ...
-
-    file.close()
+    data = read_input(__file__, "example.txt")  # Reads `example.txt` file
     return 0
 
 
 if __name__ == "__main__":
-    print(part_one())
-    print(part_two())
+    part_one()
+    part_two()
+```
+
+```
+part_one = 0 (1 ms)
+part_two = 0 (1 ms)
 ```
 
 ## License

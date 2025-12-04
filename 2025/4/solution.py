@@ -3,33 +3,17 @@
 # dependencies = []
 # ///
 
-from os import path
-from time import time
-from typing import Callable
+from pathlib import Path
+from sys import path
 
+path.insert(0, str(Path(__file__).parent.parent.parent))
 
-def log(func: Callable):
-    def wrapper():
-        start = time()
-        result = func()
-        end = time()
-
-        print(f"{func.__name__} = {result} ({(end - start) * 1000:0.0f} ms)")
-
-        return result
-
-    return wrapper
-
-
-def read_input() -> list[list[str]]:
-    directory = path.abspath(path.dirname(__file__))
-    with open(path.join(directory, "input.txt")) as file:
-        return [[c for c in line] for line in file.read().strip().split("\n")]
+from helpers import log, read_input
 
 
 @log
 def part_one() -> int:
-    grid = read_input()
+    grid = [[c for c in line] for line in read_input(__file__).split("\n")]
 
     rows = len(grid)
     cols = len(grid[0])
@@ -68,7 +52,7 @@ def part_one() -> int:
 
 @log
 def part_two() -> int:
-    grid = read_input()
+    grid = [[c for c in line] for line in read_input(__file__).split("\n")]
 
     rows = len(grid)
     cols = len(grid[0])
